@@ -8,10 +8,8 @@
 #import <UIKit/UIKit.h>
 #import "CollaborateUtils.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface MainViewController : UIViewController <CollaborateCallsManagerCallback>
 
-@end
+@property (nonatomic, retain) NSString* _storyboardName;
 
-NS_ASSUME_NONNULL_END
+@end

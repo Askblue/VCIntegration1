@@ -25,6 +25,10 @@
      We just have to set this object as callback for CallManager events
      */
     CollaborateUtils.Instance.callManagerCallback = self;
+
+    self._storyboardName = @"Main1";
+
+
 }
 
 
@@ -35,7 +39,10 @@
     if ( _startingCallViewController != nil ){
         [_startingCallViewController dismissViewControllerAnimated:NO completion:nil];
     }
-    _startingCallViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"startingCallViewController"];
+
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:_storyboardName bundle:nil];
+    //_startingCallViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"startingCallViewController"]
+    _startingCallViewController = [sb instantiateViewControllerWithIdentifier:@"startingCallViewController"];
     _startingCallViewController.call = call;
     [self presentViewController:_startingCallViewController animated:NO completion:nil];
 }
@@ -48,7 +55,11 @@
         [_startingCallViewController dismissViewControllerAnimated:NO completion:nil];
     }
 
-    _callViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"callViewController"];
+  UIStoryboard* sb = [UIStoryboard storyboardWithName:_storyboardName bundle:nil];
+
+//    _callViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"callViewController"];
+
+    _callViewController = [sb instantiateViewControllerWithIdentifier:@"callViewController"];
     _callViewController.call = call;
     [self presentViewController:_callViewController animated:NO completion:nil];
 }
