@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     /**
      We just have to set this object as callback for CallManager events
      */
@@ -47,7 +47,7 @@
     if ( _startingCallViewController != nil ){
         [_startingCallViewController dismissViewControllerAnimated:NO completion:nil];
     }
-    
+
     _callViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"callViewController"];
     _callViewController.call = call;
     [self presentViewController:_callViewController animated:NO completion:nil];
@@ -60,7 +60,7 @@
     if ( _callViewController != nil ){
         [_callViewController dismissViewControllerAnimated:NO completion:nil];
     }
-    
+
     if ( _startingCallViewController != nil ){
         [_startingCallViewController dismissViewControllerAnimated:NO completion:nil];
     }
@@ -81,7 +81,7 @@
                 self.infoLabel.text = @"No meeting available";
             }
         }
-        
+
         CollaborateUtils.Instance.loginMeetingSeqID = kSPT_INVALID_MEETING_SEQUENCE_ID;
     }
 }
