@@ -10,7 +10,7 @@
 
 @interface LoginViewController ()
 
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -20,7 +20,7 @@
     [super viewDidLoad];
 
     CollaborateUtils.Instance.loginCallback = self;
-  
+
     [self onMeetingTokenGo:nil];
 }
 
@@ -31,7 +31,7 @@
 
 -(void)onLoginResult:(BOOL)loginOK error:(eSptConnectionResult)error{
     _activityIndicator.hidden = YES;
-    
+
     if ( loginOK ){
         [self performSegueWithIdentifier:@"showMain" sender:self];
     }else{
@@ -43,7 +43,7 @@
 
 - (IBAction)onMeetingTokenGo:(id)sender {
     _activityIndicator.hidden = NO;
-    
+
     AskblueUtils *instanceAB = [AskblueUtils Instance];
     [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
                                          server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
@@ -51,7 +51,7 @@
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
     NSString *error = nil;
-    
+
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
         {
@@ -72,11 +72,11 @@
             break;
         case kSptTokenDataResultInvalidToken:
             error = @"Invalid token";
-            
+
             //Token is invalid, nothing else
             break;
     }
-    
+
     if ( error != nil ){
         _activityIndicator.hidden = YES;
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting"
