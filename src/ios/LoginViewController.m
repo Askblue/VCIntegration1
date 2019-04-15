@@ -19,9 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CollaborateUtils.Instance.loginCallback = self;
+  //  CollaborateUtils.Instance.loginCallback = self;
 
-    [self onMeetingTokenGo:nil];
+  //  [self onMeetingTokenGo:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,7 +30,8 @@
 }
 
 -(void)onLoginResult:(BOOL)loginOK error:(eSptConnectionResult)error{
-    _activityIndicator.hidden = YES;
+
+  /*  _activityIndicator.hidden = YES;
 
     if ( loginOK ){
         [self performSegueWithIdentifier:@"showMain" sender:self];
@@ -39,17 +40,22 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
+    */
 }
 
 - (IBAction)onMeetingTokenGo:(id)sender {
-    _activityIndicator.hidden = NO;
+
+  /*  _activityIndicator.hidden = NO;
 
     AskblueUtils *instanceAB = [AskblueUtils Instance];
     [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
                                          server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
+  */
 }
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
+
+/*
     NSString *error = nil;
 
     switch ( tokenDataResult.result ){
@@ -85,6 +91,8 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
+
+    */
 }
 
 @end
