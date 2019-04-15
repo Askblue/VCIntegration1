@@ -19,9 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-  //  CollaborateUtils.Instance.loginCallback = self;
+    CollaborateUtils *instance = [CollaborateUtils Instance];
+    CollaborateUtils.Instance.loginCallback = self;
 
-  //  [self onMeetingTokenGo:nil];
+    [self onMeetingTokenGo:nil];
 }
 
 - (void)didReceiveMemoryWarning {
