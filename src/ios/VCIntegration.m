@@ -1,5 +1,5 @@
 #import "VCIntegration.h"
-//#import "ViewController.h"
+#import "ViewController.h"
 #import "AskblueUtils.h"
 
 @implementation VCIntegration
@@ -68,9 +68,9 @@
 
     //  ViewController *_launchScreenViewController = [[UIStoryboard storyboardWithName:_storyboardName bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController1"];
 
-     _launchScreenViewController = [sb instantiateInitialViewController];
+  //   _launchScreenViewController = [sb instantiateInitialViewController];
 
-  //    _launchScreenViewController = [[ViewController alloc] init];
+      _launchScreenViewController = [[ViewController alloc] init];
       _launchScreenStartAlpha = _launchScreenViewController.view.alpha;
 
       //  _launchScreenViewController.serverName = serverName;

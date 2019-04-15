@@ -41,7 +41,7 @@
         _buttonAnswer.hidden = YES;
         _buttonReject.hidden = YES;
         _buttonCancel.hidden = NO;
-        _labelTitle.text = (_call.meeting!=nil)?@"Joining":@"Calling";
+        _labelTitle.text = @"Calling";
         
         NSMutableString *participantText = [NSMutableString string];
         for ( ISptCallParticipantData *participant in [_call getParticipants:YES] ){
