@@ -22,6 +22,8 @@
     CollaborateUtils *instance = [CollaborateUtils Instance];
     CollaborateUtils.Instance.loginCallback = self;
 
+    AskblueUtils *instanceAB = [AskblueUtils Instance];
+
     [self onMeetingTokenGo:nil];
 }
 
