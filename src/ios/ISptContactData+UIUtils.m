@@ -16,6 +16,7 @@
         case kSptPresenceInvisible:
             return UIColor.redColor;
             break;
+        case kSptPresenceOffLineOnMobile:
         case kSptPresenceAway:
             return UIColor.yellowColor;
             break;

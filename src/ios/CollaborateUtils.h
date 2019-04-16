@@ -8,16 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <CollaborateSpace/CollaborateSpace.h>
 
-typedef NS_ENUM(NSInteger, JoinMeetingError)
-{
-    eNoError,
-    eWaitingHost,
-    eMeetingFinished,
-    eMeetingNotStarted,
-    eMeetingCancelled,
-    eNoMeetingFound
-};
-
 /**
 ISpontaniaIMApiDelegate has too many functions, so we simplify to different protocols for different purpose
 */
@@ -29,7 +19,6 @@ ISpontaniaIMApiDelegate has too many functions, so we simplify to different prot
 @required
 -(void)onLoginResult:(BOOL)loginOK error:(eSptConnectionResult)error;
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult;
--(void)onMeetingsSynchronized;
 @end
 
 
@@ -109,6 +98,12 @@ ISpontaniaIMApiDelegate has too many functions, so we simplify to different prot
  */
 -(void)onCallRequestUpdated:(SptCallRequest *)callRequest;
 
+/**
+ When some participants started or finished a service
+ 
+ @param participant Interface with participant information
+ */
+- (void)onCallParticipantUpdated:(ISptCallParticipantData *)participant;
 
 /**
  Local user can annotate over the current stream
@@ -144,6 +139,11 @@ ISpontaniaIMApiDelegate has too many functions, so we simplify to different prot
  @param call Interface to provide information about call (participants, type: audio/video, status)
  */
 -(void)onCallFinished:(ISptCall*)call;
+
+/**
+ When we want to connect to a meeting as soon as possible we have to wait for this event
+ */
+-(void)onMeetingsSynchronized;
 @end
 
 
@@ -187,6 +187,12 @@ ISpontaniaIMApiDelegate has too many functions, so we simplify to different prot
  this call interface so we can access it anytime while it is alive
  */
 @property (nonatomic, retain) ISptCall *currentCall;
+
+/**
+ When login with a token/Meeting ID, we store here the id and, after login
+ and synchronizing, we will enter into the given meeting
+ */
+@property (nonatomic, assign) SptMeetingSeqID loginMeetingSeqID;
 
 @end
 

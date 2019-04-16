@@ -56,8 +56,6 @@
         }
     });
 }
-
-
 -(void)updateRoster{
     dispatch_async( dispatch_get_main_queue(), ^(){
         if ( self.contactsCallback != nil ){
@@ -111,7 +109,6 @@
 }
 
 - (void)onCallEventConnected:(SptCallID)callID calldata:(ISptCall *)callDataObj {
-    
 }
 
 - (void)onCallEventDisconnected:(SptCallID)callID calldata:(ISptCall *)callDataObj {
@@ -129,29 +126,11 @@
 }
 
 - (void)onCallEventStateUpdated:(SptCallID)callID calldata:(ISptCall *)callDataObj {
-    if ( _currentCall == nil)
-    {
-        switch (callDataObj.callState) {
-
-            case kCallStateUnknown:
-            case kCallStateWaitingParticipants:
-            case kCallStateReconnecting:
-            case kCallStateConnected:
-            case kCallStateConnectedInOtherDevice:
-            case kCallStateDisconnecting:
-            case kCallStateDisconnected:
-            case kCallStateRejected:
-            case kCallStateError:
-                return;
-                break;
-            case kCallStateCreating:
-            case kCallStateRinging:
-            case kCallStateConnecting:
-            case kCallStateAccepted:
-                self.currentCall = callDataObj;
-                break;
-            
-        }
+    if ( _currentCall == nil
+        && ( callDataObj.callState == kCallStateCreating
+            || callDataObj.callState == kCallStateConnecting ) ){
+        self.currentCall = callDataObj;
+        return ;
     }
     
     if ( _currentCall != nil && _currentCall.callID == callID ){
@@ -340,8 +319,10 @@
     
 }
 
-- (void)onCallEventParticipantUpdated:(SptCallID)callID callParticipant:(ISptCallParticipantData *)callParticipantObj { 
-    
+- (void)onCallEventParticipantUpdated:(SptCallID)callID callParticipant:(ISptCallParticipantData *)callParticipantObj {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.callCallback onCallParticipantUpdated:callParticipantObj];
+    });
 }
 
 - (void)onCallEventPrivateChatUpt:(SptCallID)callID chat:(SptCallChat *)callChat { 
@@ -498,12 +479,9 @@
     
 }
 
-- (void)onSchMeetingsSynchronized {
-    //User Logged into Collaborate system
-    dispatch_async( dispatch_get_main_queue(), ^(){
-        if ( self.loginCallback != nil ){
-            [self.loginCallback onMeetingsSynchronized];
-        }
+- (void)onSchMeetingsSynchronized { 
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.callManagerCallback onMeetingsSynchronized];
     });
 }
 
