@@ -10,7 +10,7 @@
 #import "CallViewController.h"
 #import "CollaborateUtils.h"
 
-@interface MainViewController ()
+@interface Main1ViewController ()
 @property (nonatomic, retain) StartingCallViewController *startingCallViewController;
 @property (nonatomic, retain) CallViewController *callViewController;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
