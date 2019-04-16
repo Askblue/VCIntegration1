@@ -5,7 +5,7 @@
 //  Copyright © 2019 ClearOne. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "Main1ViewController.h"
 //#import "StartingCallViewController.h"
 //#import "CallViewController.h"
 //#import "CollaborateUtils.h"
@@ -17,7 +17,7 @@
 
 //@end
 
-@implementation MainViewController
+@implementation Main1ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
