@@ -50,7 +50,7 @@
     AskblueUtils *instanceAB = [AskblueUtils Instance];
 
     NSString *server = @"collaboratespace.net";
-    NSString *token = @"59788593";
+    NSString *token = @"87052327";
 
     server = [NSString stringWithFormat:@"%@", [instanceAB myServer]];
     token = [NSString stringWithFormat:@"%@",  [instanceAB myToken]];
