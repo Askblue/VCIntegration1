@@ -34,11 +34,11 @@
     _activityIndicator.hidden = YES;
 
     if ( loginOK ){
-      //  [self performSegueWithIdentifier:@"showMain" sender:self];
+        [self performSegueWithIdentifier:@"showMain" sender:self];
     }else{
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting" message:@"Unable to login to the service" preferredStyle:UIAlertControllerStyleAlert ];
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
-      //  [self presentViewController:alert animated:YES completion:nil];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -49,13 +49,13 @@
     AskblueUtils *instanceAB = [AskblueUtils Instance];
     [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
                                          server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
-  
+
 }
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
     NSString *error = nil;
 
-/*
+
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
         {
@@ -90,7 +90,7 @@
         [self presentViewController:alert animated:YES completion:nil];
     }
 
-    */
+    
 }
 
 @end
