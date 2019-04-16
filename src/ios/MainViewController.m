@@ -8,6 +8,7 @@
 #import "MainViewController.h"
 #import "StartingCallViewController.h"
 #import "CallViewController.h"
+#import "CollaborateUtils.h"
 
 @interface MainViewController ()
 @property (nonatomic, retain) StartingCallViewController *startingCallViewController;
