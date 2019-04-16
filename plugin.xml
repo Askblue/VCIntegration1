@@ -49,6 +49,8 @@
       <source-file src="src/ios/VCIntegration.m" target-dir="src/VCIntegration"/>
       <header-file src="src/ios/CallViewController.h" target-dir="src/VCIntegration"/>
       <source-file src="src/ios/CallViewController.m" target-dir="src/VCIntegration"/>
+      <header-file src="src/ios/Main1ViewController.h" target-dir="src/VCIntegration"/>
+      <source-file src="src/ios/Main1ViewController.m" target-dir="src/VCIntegration"/>
       <header-file src="src/ios/CollaborateUtils.h" target-dir="src/VCIntegration"/>
       <source-file src="src/ios/CollaborateUtils.m" target-dir="src/VCIntegration"/>
       <header-file src="src/ios/AskblueUtils.h" target-dir="src/VCIntegration"/>
