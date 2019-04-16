@@ -7,8 +7,8 @@
 
 #import "MainViewController.h"
 //#import "StartingCallViewController.h"
-#import "CallViewController.h"
-#import "CollaborateUtils.h"
+//#import "CallViewController.h"
+//#import "CollaborateUtils.h"
 
 @interface MainViewController ()
 //@property (nonatomic, retain) StartingCallViewController *startingCallViewController;
@@ -29,7 +29,7 @@
 }
 
 
--(void)onNewCall:(ISptCall*)call incoming:(BOOL)incoming{
+//-(void)onNewCall:(ISptCall*)call incoming:(BOOL)incoming{
     /**
      When a new call appears we present "Starting Call" view controller
 
@@ -40,9 +40,9 @@
     _startingCallViewController.call = call;
     [self presentViewController:_startingCallViewController animated:NO completion:nil];
     */
-}
+//}
 
--(void)onCallEstablished:(ISptCall*)call {
+//-(void)onCallEstablished:(ISptCall*)call {
     /**
      If the call is Established, we hide "Starting Call" view controller and show "In Call" view controller
 
@@ -54,9 +54,9 @@
     _callViewController.call = call;
     [self presentViewController:_callViewController animated:NO completion:nil];
     */
-}
+//}
 
--(void)onCallFinished:(ISptCall*)call{
+//-(void)onCallFinished:(ISptCall*)call{
     /**
      When the call is finished, we just hide all call viewcontrollers
 
@@ -68,7 +68,7 @@
         [_startingCallViewController dismissViewControllerAnimated:NO completion:nil];
     }
     */
-}
+//}
 -(void)onMeetingsSynchronized{
     //If we entered with a meeting Personal ID
 
