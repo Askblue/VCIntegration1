@@ -43,13 +43,13 @@
 }
 
 - (IBAction)onMeetingTokenGo:(id)sender {
-  /*
+
     _activityIndicator.hidden = NO;
 
     AskblueUtils *instanceAB = [AskblueUtils Instance];
     [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
                                          server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
-  */
+  
 }
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
