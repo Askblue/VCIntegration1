@@ -61,7 +61,7 @@
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
     NSString *error = nil;
 
-/*
+
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
         {
@@ -95,7 +95,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
-*/
+
 
 }
 
