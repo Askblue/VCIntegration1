@@ -10,6 +10,4 @@
 
 @interface MainViewController : UIViewController <CollaborateCallsManagerCallback>
 
-@property (nonatomic, retain) NSString* _storyboardName;
-
 @end
