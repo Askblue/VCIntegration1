@@ -15,7 +15,7 @@
 @property (nonatomic, retain) CallViewController *callViewController;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 
-//@end
+@end
 
 @implementation Main1ViewController
 
