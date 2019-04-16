@@ -71,7 +71,7 @@
 
   //   _launchScreenViewController = [sb instantiateInitialViewController];
 
-      _launchScreenViewController = [[ViewController alloc] init];
+      _launchScreenViewController = [[LoginViewController alloc] init];
       _launchScreenStartAlpha = _launchScreenViewController.view.alpha;
 
       //  _launchScreenViewController.serverName = serverName;
