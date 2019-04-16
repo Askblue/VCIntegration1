@@ -10,7 +10,7 @@
 
 @interface LoginViewController ()
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -43,16 +43,19 @@
 }
 
 - (IBAction)onMeetingTokenGo:(id)sender {
+  /*
     _activityIndicator.hidden = NO;
 
     AskblueUtils *instanceAB = [AskblueUtils Instance];
     [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
                                          server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
+  */
 }
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
     NSString *error = nil;
 
+/*
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
         {
@@ -86,6 +89,8 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
+
+    */
 }
 
 @end
