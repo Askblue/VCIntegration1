@@ -10,7 +10,7 @@
 
 @interface LoginViewController ()
 
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -34,11 +34,11 @@
     _activityIndicator.hidden = YES;
 
     if ( loginOK ){
-        [self performSegueWithIdentifier:@"showMain" sender:self];
+      //  [self performSegueWithIdentifier:@"showMain" sender:self];
     }else{
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting" message:@"Unable to login to the service" preferredStyle:UIAlertControllerStyleAlert ];
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
+      //  [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
