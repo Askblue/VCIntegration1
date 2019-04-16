@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import "AskblueUtils.h"
+#import "CollaborateUtils.h"
 
 @interface LoginViewController ()
 
@@ -65,12 +66,12 @@
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
         {
-            CollaborateUtils.Instance.loginMeetingSeqID = tokenDataResult.meetingSequenceID;
+          //  CollaborateUtils.Instance.loginMeetingSeqID = tokenDataResult.meetingSequenceID;
         }
         case kSptTokenDataResultLogin:
             //Lets login with the given credentials
-            [CollaborateUtils.Instance.api loginWithTokenDataResult:tokenDataResult];
-            CollaborateUtils.Instance.loginMeetingSeqID = tokenDataResult.meetingSequenceID;
+            //[CollaborateUtils.Instance.api loginWithTokenDataResult:tokenDataResult];
+            //CollaborateUtils.Instance.loginMeetingSeqID = tokenDataResult.meetingSequenceID;
             break;
         case kSptTokenDataResultError:
             error = @"Error retrieving token data";
