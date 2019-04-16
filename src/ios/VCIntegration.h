@@ -1,12 +1,12 @@
 #import <Cordova/CDV.h>
 #import <UIKit/UIKit.h>
 #import <CollaborateSpace/CollaborateSpace.h>
-#import "ViewController.h"
+#import "LoginViewController.h"
 
 // <VCIntegrationDelegate>
 
 @interface VCIntegration : CDVPlugin  {
-    ViewController* _launchScreenViewController;
+    LoginViewController* _launchScreenViewController;
     NSString* _storyboardName;
     float _launchScreenStartAlpha;
 
