@@ -6,14 +6,14 @@
 //
 
 #import "Main1ViewController.h"
-//#import "StartingCallViewController.h"
-//#import "CallViewController.h"
-//#import "CollaborateUtils.h"
+#import "StartingCallViewController.h"
+#import "CallViewController.h"
+#import "CollaborateUtils.h"
 
-//@interface MainViewController ()
-//@property (nonatomic, retain) StartingCallViewController *startingCallViewController;
-//@property (nonatomic, retain) CallViewController *callViewController;
-//@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@interface MainViewController ()
+@property (nonatomic, retain) StartingCallViewController *startingCallViewController;
+@property (nonatomic, retain) CallViewController *callViewController;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 
 //@end
 
