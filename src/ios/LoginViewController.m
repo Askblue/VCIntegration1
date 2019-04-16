@@ -65,6 +65,40 @@
 
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
+            //It is a token to join meeting
+            [CollaborateUtils.Instance.api loginWithTokenDataResult:tokenDataResult];
+            break;
+        case kSptTokenDataResultLogin:
+            //It is a token to login
+            [CollaborateUtils.Instance.api loginWithTokenDataResult:tokenDataResult];
+            break;
+        case kSptTokenDataResultError:
+            error = @"Error retrieving token data";
+            //Any other error in the token patameters
+            break;
+        case kSptTokenDataResultServerNotReachable:
+            error = @"Server not reachable";
+            //Cannot reach server, try later?
+            break;
+        case kSptTokenDataResultInvalidToken:
+            error = @"Invalid token";
+
+            //Token is invalid, nothing else
+            break;
+    }
+
+    if ( error != nil ){
+      //  _activityIndicator.hidden = YES;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting"
+                                                                       message:error
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+/*
+
+    switch ( tokenDataResult.result ){
+        case kSptTokenDataResultJoinMeeting:
             CollaborateUtils.Instance.loginMeetingSeqID = tokenDataResult.meetingSequenceID;
             break;
         case kSptTokenDataResultLogin:
@@ -96,6 +130,7 @@
         [self presentViewController:alert animated:YES completion:nil];
     }
 
+*/
 
 }
 
