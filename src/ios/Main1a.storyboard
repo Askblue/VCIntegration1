@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="-862" y="-60"/>
         </scene>
-        <!--Main1 View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="04i-yW-Xfb">
             <objects>
-                <viewController id="ygX-om-Ego" customClass="Main1ViewController" sceneMemberID="viewController">
+                <viewController id="ygX-om-Ego" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zUL-4I-xre"/>
                         <viewControllerLayoutGuide type="bottom" id="KzS-Dg-KZn"/>
