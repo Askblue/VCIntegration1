@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "CollaborateUtils.h"
 
-//@interface MainViewController : UIViewController <CollaborateCallsManagerCallback>
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <CollaborateCallsManagerCallback>
 
 @end
