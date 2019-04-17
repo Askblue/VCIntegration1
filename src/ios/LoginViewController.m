@@ -38,7 +38,7 @@
                                       message:@"87052327"
                                      delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     NSLog(@"VC - onGetTokenDataResult");
-    //[alert show];
+    [alert show];
 
     if ( loginOK ){
         [self performSegueWithIdentifier:@"showMain" sender:self];
@@ -58,20 +58,10 @@
     NSString *server = @"collaboratespace.net";
     NSString *token = @"67243416";
 
-
-    server = [NSString stringWithFormat:@"%@", [instanceAB myServer]];
-    token = [NSString stringWithFormat:@"%@",  [instanceAB myToken]];
-
-    NSString* msg1 = [NSString stringWithFormat: @"serverName: %@ personalID: %@", server, token];
-
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test0"
-                                      message:msg1
-                                     delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-    NSLog(@"VC - onGetTokenDataResult");
-    [alert show];
-    
-  //  [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
-  //                                       server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
+  //  server = [NSString stringWithFormat:@"%@", [instanceAB myServer]];
+//    token = [NSString stringWithFormat:@"%@",  [instanceAB myToken]];
+//    [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
+//                                         server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
      [CollaborateUtils.Instance.api getTokenData:token server:server];
 
 }
@@ -83,7 +73,7 @@
                                       message:@"87052327"
                                      delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     NSLog(@"VC - onGetTokenDataResult");
-    //[alert show];
+    [alert show];
 
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
