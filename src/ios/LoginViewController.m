@@ -78,8 +78,8 @@
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
             //It is a token to join meeting
-            //[CollaborateUtils.Instance.api loginWithTokenDataResult:tokenDataResult];
             CollaborateUtils.Instance.loginMeetingSeqID = tokenDataResult.meetingSequenceID;
+            [CollaborateUtils.Instance.api loginWithTokenDataResult:tokenDataResult];
             break;
         case kSptTokenDataResultLogin:
             //It is a token to login
