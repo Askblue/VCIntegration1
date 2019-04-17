@@ -34,6 +34,12 @@
 -(void)onLoginResult:(BOOL)loginOK error:(eSptConnectionResult)error{
     _activityIndicator.hidden = YES;
 
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test2"
+                                      message:@"87052327"
+                                     delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    NSLog(@"VC - onGetTokenDataResult");
+    [alert show];
+
     if ( loginOK ){
         [self performSegueWithIdentifier:@"showMain" sender:self];
     }else{
@@ -58,16 +64,16 @@
 //                                         server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
      [CollaborateUtils.Instance.api getTokenData:token server:server];
 
-     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
-                                       message:@"87052327"
-                                      delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-     NSLog(@"VC - onMeetingTokenGo");
-     [alert show];
 }
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
     NSString *error = nil;
 
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
+                                      message:@"87052327"
+                                     delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+    NSLog(@"VC - onGetTokenDataResult");
+    [alert show];
 
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
