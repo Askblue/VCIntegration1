@@ -60,9 +60,9 @@
 
   //  server = [NSString stringWithFormat:@"%@", [instanceAB myServer]];
 //    token = [NSString stringWithFormat:@"%@",  [instanceAB myToken]];
-//    [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
-//                                         server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
-     [CollaborateUtils.Instance.api getTokenData:token server:server];
+    [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
+                                         server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
+    [CollaborateUtils.Instance.api getTokenData:token server:server];
 
 }
 
