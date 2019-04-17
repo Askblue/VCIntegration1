@@ -38,7 +38,7 @@
                                       message:@"87052327"
                                      delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     NSLog(@"VC - onGetTokenDataResult");
-    [alert show];
+    //[alert show];
 
     if ( loginOK ){
         [self performSegueWithIdentifier:@"showMain" sender:self];
@@ -73,7 +73,7 @@
                                       message:@"87052327"
                                      delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
     NSLog(@"VC - onGetTokenDataResult");
-    [alert show];
+    //[alert show];
 
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
