@@ -61,7 +61,11 @@
      When the call is finished, we just hide all call viewcontrollers
     */
     if ( _callViewController != nil ){
-        [_callViewController dismissViewControllerAnimated:NO completion:nil];
+        [_callViewController dismissViewControllerAnimated:NO completion:^{
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+        }];
     }
 
     if ( _startingCallViewController != nil ){
