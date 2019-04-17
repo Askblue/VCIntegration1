@@ -302,7 +302,7 @@
 }
 - (IBAction)onHangupPressed:(id)sender {
     [CollaborateUtils.Instance.api hangUpCall:self.call.callID];
-    [self dismissViewControllerAnimated:YES completion:nil];
+  //  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)onOptionsPressed:(id)sender {
