@@ -74,6 +74,8 @@
       <source-file src="src/ios/hangup.png" target="src/VCIntegration" />
       <source-file src="src/ios/more.png" target="src/VCIntegration"/>
       <resource-file src="src/ios/video.png"/>
+      <resource-file src="src/ios/videoMute.png"/>
+      <resource-file src="src/ios/micMute.png"/>
       <source-file src="src/ios/AppDelegate+notification.m" target-dir="src/VCIntegration"/>
       <header-file src="src/ios/AppDelegate+notification.h" target-dir="src/VCIntegration"/>
 
