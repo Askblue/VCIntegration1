@@ -57,6 +57,12 @@
 //    [CollaborateUtils.Instance.api getTokenData:[NSString stringWithFormat:@"%@", [instanceAB myToken]]
 //                                         server:[NSString stringWithFormat:@"%@", [instanceAB myServer]]];
      [CollaborateUtils.Instance.api getTokenData:token server:server];
+
+     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
+                                       message:@"87052327"
+                                      delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+     NSLog(@"VC - onMeetingTokenGo");
+     [alert show];
 }
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
