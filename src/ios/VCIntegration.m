@@ -90,12 +90,12 @@
 
     //  [self.viewController addChildViewController:_launchScreenViewController];
 
-      [self presentViewController:_launchScreenViewController animated:YES completion:nil];
+   //    [self presentViewController:_launchScreenViewController animated:YES completion:nil];
 
   //    [appDelegate.window.rootViewController presentViewController:_launchScreenViewController animated:NO completion: nil];
 
 
-    //  [self.viewController.navigationController pushViewController: _launchScreenViewController animated: YES];
+      [self.viewController.navigationController pushViewController: _launchScreenViewController animated: YES];
 
 
 
