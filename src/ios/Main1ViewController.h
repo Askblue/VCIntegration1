@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CollaborateUtils.h"
+#import "AskblueUtils.h"
+
 
 @interface Main1ViewController : UIViewController <CollaborateCallsManagerCallback>
 
