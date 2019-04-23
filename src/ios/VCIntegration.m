@@ -8,7 +8,7 @@
 - (void) show:(CDVInvokedUrlCommand*) command
 {
 
-  //   _localcmd = command;
+     _localcmd = command;
   //   NSString* name = [[command arguments] objectAtIndex:0];
      NSString* serverName;
      NSString* personalID;
@@ -113,17 +113,17 @@
 - (void)result:(NSString *)code andMessage:(NSString *)message {
 
     if code != nil {
-        CDVPluginResult* result = [CDVPluginResult
+        CDVPluginResult* result1 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_ERROR
                                    messageAsString:message];
 
-      //  [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
+        [self.commandDelegate sendPluginResult:result1 callbackId:_localcmd.callbackId];
     } else {
-        CDVPluginResult* result1 = [CDVPluginResult
+        CDVPluginResult* result2 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
                                    messageAsString:message];
 
-      //  [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
+        [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
     }
 
 }

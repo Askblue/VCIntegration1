@@ -9,7 +9,7 @@
 @interface VCIntegration : CDVPlugin <AskblueUtilsDelegate> {
     LoginViewController* _launchScreenViewController;
     NSString* _storyboardName;
-    //CDVInvokedUrlCommand* _localcmd;
+    CDVInvokedUrlCommand* _localcmd;
     float _launchScreenStartAlpha;
 
 }
