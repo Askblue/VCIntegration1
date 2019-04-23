@@ -119,7 +119,7 @@
 
       //  [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
     } else {
-        CDVPluginResult* result = [CDVPluginResult
+        CDVPluginResult* result1 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
                                    messageAsString:message];
 
