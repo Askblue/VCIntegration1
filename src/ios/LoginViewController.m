@@ -132,7 +132,10 @@
                 [self.delegate result:statusCode andMessage:error];
             }];
         }]];
-        [self presentViewController:alert animated:YES completion:nil];
+        //[self presentViewController:alert animated:YES completion:nil];
+        [self presentViewController:alert animated:YES completion:^{
+            [self.delegate result:statusCode andMessage:error];
+        }];
     }
 /*
 
