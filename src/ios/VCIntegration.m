@@ -131,12 +131,6 @@
       //NSLog(@"VC - onGetTokenDataResult");
       //[alert show];
 
-      NSArray *subViewArray = [self.window subviews];
-      for (id obj in subViewArray)
-      {
-          [obj removeFromSuperview];
-      }
-
     } else {
         CDVPluginResult* result2 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK

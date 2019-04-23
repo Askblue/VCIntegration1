@@ -134,6 +134,11 @@
         }]];
         //[self presentViewController:alert animated:YES completion:nil];
         [self presentViewController:alert animated:YES completion:^{
+          NSArray *subViewArray = [self.window subviews];
+          for (id obj in subViewArray)
+          {
+              [obj removeFromSuperview];
+          }
             [self.delegate result:statusCode andMessage:error];
         }];
     }
