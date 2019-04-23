@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol AskblueUtilsDelegate <NSObject>
+@optional
 - (void)viewDismiss;
 - (void)result:(NSString *)code andMessage:(NSString *)message;
 @end

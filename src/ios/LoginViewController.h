@@ -11,4 +11,6 @@
 
 @interface LoginViewController : UIViewController <CollaborateLoginCallback, AskblueUtilsDelegate>
 
+@property (weak, nonatomic) id<AskblueUtilsDelegate> delegate;
+
 @end

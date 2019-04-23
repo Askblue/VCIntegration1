@@ -8,7 +8,7 @@
 - (void) show:(CDVInvokedUrlCommand*) command
 {
 
-
+     _localcmd = command;
   //   NSString* name = [[command arguments] objectAtIndex:0];
      NSString* serverName;
      NSString* personalID;
@@ -103,9 +103,9 @@
       [self.viewController.view addSubview:_launchScreenViewController.view];
       [_launchScreenViewController didMoveToParentViewController:self.viewController];
 
-    //  _launchScreenViewController.delegate = self;
+      _launchScreenViewController.delegate = self;
 
-      [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+      //[self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 
 }
 
@@ -116,13 +116,13 @@
                                    resultWithStatus:CDVCommandStatus_ERROR
                                    messageAsString:message];
 
-        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+        [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
     } else {
         CDVPluginResult* result = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
                                    messageAsString:message];
 
-        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+        [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
     }
 
 }
