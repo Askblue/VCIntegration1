@@ -112,7 +112,7 @@
 
 - (void)result:(NSString *)code andMessage:(NSString *)message {
 
-    if code != nil {
+    if (code != nil) {
         CDVPluginResult* result1 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_ERROR
                                    messageAsString:message];
