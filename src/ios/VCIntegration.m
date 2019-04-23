@@ -8,7 +8,7 @@
 - (void) show:(CDVInvokedUrlCommand*) command
 {
 
-     _localcmd = command;
+  //   _localcmd = command;
   //   NSString* name = [[command arguments] objectAtIndex:0];
      NSString* serverName;
      NSString* personalID;
