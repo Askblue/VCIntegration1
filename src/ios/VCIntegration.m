@@ -103,7 +103,27 @@
       [self.viewController.view addSubview:_launchScreenViewController.view];
       [_launchScreenViewController didMoveToParentViewController:self.viewController];
 
+    //  _launchScreenViewController.delegate = self;
+
       [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+
+}
+
+- (void)result:(NSString *)code andMessage:(NSString *)message {
+
+    if code != nil {
+        CDVPluginResult* result = [CDVPluginResult
+                                   resultWithStatus:CDVCommandStatus_ERROR
+                                   messageAsString:message];
+
+        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+    } else {
+        CDVPluginResult* result = [CDVPluginResult
+                                   resultWithStatus:CDVCommandStatus_OK
+                                   messageAsString:message];
+
+        [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+    }
 
 }
 

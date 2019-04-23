@@ -2,10 +2,11 @@
 #import <UIKit/UIKit.h>
 #import <CollaborateSpace/CollaborateSpace.h>
 #import "LoginViewController.h"
+#import "AskblueUtils.h"
 
 // <VCIntegrationDelegate>
 
-@interface VCIntegration : CDVPlugin  {
+@interface VCIntegration : CDVPlugin <AskblueUtilsDelegate> {
     LoginViewController* _launchScreenViewController;
     NSString* _storyboardName;
     float _launchScreenStartAlpha;
