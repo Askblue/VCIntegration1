@@ -118,6 +118,13 @@
       //                             messageAsString:message];
 
       //  [self.commandDelegate sendPluginResult:result1 callbackId:_localcmd.callbackId];
+
+      CDVPluginResult* result1 = [CDVPluginResult
+                                 resultWithStatus:CDVCommandStatus_OK
+                                 messageAsString:message];
+
+      [self.commandDelegate sendPluginResult:result1 callbackId:_localcmd.callbackId];
+      
     } else {
         CDVPluginResult* result2 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
