@@ -109,6 +109,7 @@
 
 }
 
+/*
 - (void)result:(NSString *)code andMessage:(NSString *)message {
 
     if code != nil {
@@ -125,7 +126,8 @@
         [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
     }
 
-}
+} */
+
 
 /*
 -(NSString *) onGetPersonalID {
