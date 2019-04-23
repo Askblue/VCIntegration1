@@ -8,7 +8,7 @@
 - (void) show:(CDVInvokedUrlCommand*) command
 {
 
-  //   _localcmd = command;
+     _localcmd = command;
   //   NSString* name = [[command arguments] objectAtIndex:0];
      NSString* serverName;
      NSString* personalID;
@@ -123,7 +123,7 @@
                                    resultWithStatus:CDVCommandStatus_OK
                                    messageAsString:message];
 
-    //    [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
+        [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
     }
 
 }
