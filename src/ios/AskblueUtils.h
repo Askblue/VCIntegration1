@@ -13,10 +13,6 @@
 - (void)result:(NSString *)code andMessage:(NSString *)message;
 @end
 
-@protocol AskblueUtilsDelegate1 <NSObject>
-- (void)viewDismiss;
-@end
-
 @interface AskblueUtils : NSObject
 
 +(AskblueUtils*)Instance;
