@@ -129,18 +129,11 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //[self dismissViewControllerAnimated:NO completion:nil];
             [self dismissViewControllerAnimated:NO completion:^{
+                [self dismissViewControllerAnimated:NO completion:nil]
                 [self.delegate result:statusCode andMessage:error];
             }];
         }]];
-        //[self presentViewController:alert animated:YES completion:nil];
-        [self presentViewController:alert animated:YES completion:^{
-          NSArray *subViewArray = [self.window subviews];
-          for (id obj in subViewArray)
-          {
-              [obj removeFromSuperview];
-          }
-            [self.delegate result:statusCode andMessage:error];
-        }];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 /*
 
