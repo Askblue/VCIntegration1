@@ -122,7 +122,7 @@
     }
 
     if ( error != nil ){
-      //  _activityIndicator.hidden = YES;
+        _activityIndicator.hidden = YES;
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting"
                                                                        message:error
                                                                 preferredStyle:UIAlertControllerStyleAlert];
