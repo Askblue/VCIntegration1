@@ -129,7 +129,13 @@
                                         message:@"87052327"
                                        delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
       //NSLog(@"VC - onGetTokenDataResult");
-      [alert show];
+      //[alert show];
+
+      NSArray *subViewArray = [self.window subviews];
+      for (id obj in subViewArray)
+      {
+          [obj removeFromSuperview];
+      }
 
     } else {
         CDVPluginResult* result2 = [CDVPluginResult
@@ -142,7 +148,7 @@
                                           message:@"87052327"
                                          delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
         //NSLog(@"VC - onGetTokenDataResult");
-        [alert show];
+        //[alert show];
       //  exit(0);
     }
 
