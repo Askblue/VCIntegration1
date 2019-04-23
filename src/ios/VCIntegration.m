@@ -131,6 +131,7 @@
                                    messageAsString:message];
 
         [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
+        [self dismissViewControllerAnimated:NO completion:nil];
     }
 
 }
