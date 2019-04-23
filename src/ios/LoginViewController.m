@@ -129,7 +129,6 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //[self dismissViewControllerAnimated:NO completion:nil];
             [self dismissViewControllerAnimated:NO completion:^{
-                [self dismissViewControllerAnimated:NO completion:nil]
                 [self.delegate result:statusCode andMessage:error];
             }];
         }]];
