@@ -109,7 +109,7 @@
 
 }
 
-/*
+
 - (void)result:(NSString *)code andMessage:(NSString *)message {
 
     if code != nil {
@@ -117,16 +117,16 @@
                                    resultWithStatus:CDVCommandStatus_ERROR
                                    messageAsString:message];
 
-        [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
+      //  [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
     } else {
         CDVPluginResult* result = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
                                    messageAsString:message];
 
-        [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
+      //  [self.commandDelegate sendPluginResult:result callbackId:_localcmd.callbackId];
     }
 
-} */
+}
 
 
 /*
