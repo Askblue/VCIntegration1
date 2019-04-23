@@ -60,13 +60,23 @@
     /**
      When the call is finished, we just hide all call viewcontrollers
     */
-    if ( _callViewController != nil ){
+  /*  if ( _callViewController != nil ){
         [_callViewController dismissViewControllerAnimated:NO completion:^{
             dispatch_async(dispatch_get_main_queue(), ^ {
                 [self dismissViewControllerAnimated:YES completion:nil];
             });
         }];
-    }
+    }*/
+
+    if ( _callViewController != nil ){
+      [_callViewController dismissViewControllerAnimated:NO completion:^{
+          dispatch_async(dispatch_get_main_queue(), ^ {
+              [self dismissViewControllerAnimated:NO completion:^{
+                  [self.delegate viewDismiss];
+              }];
+          });
+      }];
+  }
 
     if ( _startingCallViewController != nil ){
         [_startingCallViewController dismissViewControllerAnimated:NO completion:nil];

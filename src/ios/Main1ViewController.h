@@ -10,4 +10,6 @@
 
 @interface Main1ViewController : UIViewController <CollaborateCallsManagerCallback>
 
+@property (weak, nonatomic) id<AskblueUtilsDelegate> delegate;
+
 @end

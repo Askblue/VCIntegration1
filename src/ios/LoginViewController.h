@@ -7,7 +7,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CollaborateUtils.h"
+#import "AskblueUtils.h"
 
-@interface LoginViewController : UIViewController <CollaborateLoginCallback>
+@interface LoginViewController : UIViewController <CollaborateLoginCallback, AskblueUtilsDelegate>
 
 @end

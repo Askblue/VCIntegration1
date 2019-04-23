@@ -7,6 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol AskblueUtilsDelegate <NSObject>
+- (void)viewDismiss;
+@end
+
 @interface AskblueUtils : NSObject
 
 +(AskblueUtils*)Instance;

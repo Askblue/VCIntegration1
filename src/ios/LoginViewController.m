@@ -26,6 +26,17 @@
     [self onMeetingTokenGo:nil];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"showMain"])
+    {
+        Main1ViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -44,7 +55,9 @@
         [self performSegueWithIdentifier:@"showMain" sender:self];
     }else{
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting" message:@"Unable to login to the service" preferredStyle:UIAlertControllerStyleAlert ];
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:NO completion:nil];
+        }]];
         [self presentViewController:alert animated:YES completion:nil];
     }
 }
@@ -106,7 +119,9 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting"
                                                                        message:error
                                                                 preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:NO completion:nil];
+        }]];
         [self presentViewController:alert animated:YES completion:nil];
     }
 /*
@@ -146,6 +161,10 @@
 
 */
 
+}
+
+- (void)viewDismiss {
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end
