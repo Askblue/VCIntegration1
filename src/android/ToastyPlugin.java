@@ -95,7 +95,10 @@ public class ToastyPlugin extends CordovaPlugin {
         //   Context context = cordova.getActivity()
           //         .getApplicationContext();
           // Intent intent = new Intent(context, MainActivity.class);
-          that.cordova.getActivity().startActivity(intentScan);
+        //  that.cordova.getActivity().startActivity(intentScan);
+
+          that.cordova.getActivity().startActivityForResult(intentScan);
+
        }
      });
 
@@ -108,5 +111,14 @@ public class ToastyPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(pluginResult);
       return true;
   }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+      if (requestCode == 1) {
+
+      }
+  }
+
 
 }
