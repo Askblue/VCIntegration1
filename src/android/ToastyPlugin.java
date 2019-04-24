@@ -95,9 +95,9 @@ public class ToastyPlugin extends CordovaPlugin {
         //   Context context = cordova.getActivity()
           //         .getApplicationContext();
           // Intent intent = new Intent(context, MainActivity.class);
-        //  that.cordova.getActivity().startActivity(intentScan);
+          that.cordova.getActivity().startActivity(intentScan);
 
-          that.cordova.getActivity().startActivityForResult(that, intentScan, 0);
+        //  that.cordova.getActivity().startActivityForResult(intentScan, 0);
 
        }
      });
@@ -109,17 +109,19 @@ public class ToastyPlugin extends CordovaPlugin {
       // Send a positive result to the callbackContext
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
-      pluginResult.setKeepCallback(true);
+    //  pluginResult.setKeepCallback(true);
       return true;
   }
 
-  @Override
-  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+  /*@Override
+  public boolean onActivityResult(int requestCode, int resultCode, Intent intent) {
 
       if (requestCode == 1) {
 
       }
-  }
+
+
+  }*/
 
 
 }
