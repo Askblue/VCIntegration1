@@ -115,15 +115,10 @@ public class ToastyPlugin extends CordovaPlugin {
       return true;
   }
 
-  /*@Override
-  public boolean onActivityResult(int requestCode, int resultCode, Intent intent) {
-
-      if (requestCode == 1) {
-
-      }
-
-
-  }*/
+  @Override
+  public void onActivityResult(int reqCode, int resCode, Intent intent) {
+      
+  }
 
 
 }
