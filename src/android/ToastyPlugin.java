@@ -95,7 +95,9 @@ public class ToastyPlugin extends CordovaPlugin {
         //   Context context = cordova.getActivity()
           //         .getApplicationContext();
           // Intent intent = new Intent(context, MainActivity.class);
-          that.cordova.getActivity().startActivity(intentScan);
+          //that.cordova.getActivity().startActivity(intentScan);
+
+          that.cordova.startActivityForResult (this, intentScan, 0);
 
         //  that.cordova.getActivity().startActivityForResult(intentScan, 0);
 
