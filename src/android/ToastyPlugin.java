@@ -122,8 +122,18 @@ public class ToastyPlugin extends CordovaPlugin {
   public void onActivityResult(int reqCode, int resCode, Intent intent) {
 
     if (reqCode == 1) {
-        if(resCode == Activity.RESULT_OK){
+        if(resCode == Activity.RESULT_CANCELED){
+
+            JSONObject message = new JSONObject();
             String errorCode=intent.getStringExtra("errorCode");
+            String errorMessage=intent.getStringExtra("errorMessage");
+            message.put("errorCode", errorCode);
+            message.put("errorMessage", errorMessage);
+            PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, message);
+            callbackCtx.sendPluginResult(pluginResult);
+
+        } else {
+
             PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
             callbackCtx.sendPluginResult(pluginResult);
         }

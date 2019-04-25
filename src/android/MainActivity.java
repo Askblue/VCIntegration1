@@ -205,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
                             _progressView.setVisibility(View.GONE);
                             returnIntent.putExtra("errorCode","01");
                             returnIntent.putExtra("errorMessage","SptTokenDataResultInvalidToken");
+                            setResult(Activity.RESULT_CANCELED,returnIntent);
                             finish();
                             break;
                         case SptTokenDataResultServerNotReachable:
@@ -213,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
                             _progressView.setVisibility(View.GONE);
                             returnIntent.putExtra("errorCode","02");
                             returnIntent.putExtra("errorMessage","SptTokenDataResultServerNotReachable");
+                            setResult(Activity.RESULT_CANCELED,returnIntent);
                             finish();
                             break;
                         case SptTokenDataResultError:
@@ -220,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
                             _progressView.setVisibility(View.GONE);
                             returnIntent.putExtra("errorCode","01");
                             returnIntent.putExtra("errorMessage","SptTokenDataResultInvalidToken");
+                            setResult(Activity.RESULT_CANCELED,returnIntent);
                             finish();
                             break;
                     }
