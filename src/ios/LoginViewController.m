@@ -85,8 +85,7 @@
 
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
     NSString *error = nil;
-    NSString *statusCode = @"00";
-    NSString *errorMessage = @"NoError";
+    NSString *statusCode = nil;
 
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
                                       message:@"87052327"
@@ -108,19 +107,16 @@
         case kSptTokenDataResultError:
             statusCode = @"01";
             error = @"Error retrieving token data";
-            errorMessage = @"SptTokenDataResultInvalidToken";
             //Any other error in the token patameters
             break;
         case kSptTokenDataResultServerNotReachable:
             error = @"Server not reachable";
             statusCode = @"02";
-            errorMessage = @"SptTokenDataResultServerNotReachable";
             //Cannot reach server, try later?
             break;
         case kSptTokenDataResultInvalidToken:
             error = @"Invalid token";
             statusCode = @"03";
-            errorMessage = @"SptTokenDataResultInvalidToken";
             //Token is invalid, nothing else
             break;
     }
@@ -133,7 +129,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //[self dismissViewControllerAnimated:NO completion:nil];
             [self dismissViewControllerAnimated:NO completion:^{
-                [self.delegate result:statusCode andMessage:errorMessage];
+                [self.delegate result:statusCode andMessage:error];
             }];
         }]];
         [self presentViewController:alert animated:YES completion:nil];
