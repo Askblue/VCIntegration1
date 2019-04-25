@@ -25,6 +25,7 @@ import android.content.res.Resources;
 
 public class ToastyPlugin extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
+  private CallbackContext callbackCtx;
 
   String serverName;
   String userMail;
@@ -41,6 +42,7 @@ public class ToastyPlugin extends CordovaPlugin {
         return false;
       }
 
+      callbackCtx = callbackContext;
 
       try {
 
@@ -123,7 +125,7 @@ public class ToastyPlugin extends CordovaPlugin {
         if(resCode == Activity.RESULT_OK){
             String errorCode=intent.getStringExtra("errorCode");
             PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-            callbackContext.sendPluginResult(pluginResult);
+            callbackCtx.sendPluginResult(pluginResult);
         }
 
     }
