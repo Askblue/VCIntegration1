@@ -105,7 +105,10 @@
 
       _launchScreenViewController.delegate = self;
 
-      //[self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+      CDVPluginResult* result = [CDVPluginResult
+                                 resultWithStatus:CDVCommandStatus_OK
+                                 messageAsString:@"NoError"];
+      [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 
 }
 
