@@ -180,6 +180,11 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run()
                 {
+                  Intent returnIntent = new Intent();
+                  returnIntent.putExtra("errorCode","00");
+                  returnIntent.putExtra("errorMessage","NoError");
+                  setResult(Activity.RESULT_OK,returnIntent);
+
                     switch(tokenDataRes.getResult())
                     {
                         case SptTokenDataResultJoinMeeting:
@@ -198,29 +203,23 @@ public class MainActivity extends AppCompatActivity {
                           //  _tokenView.setError("Invalid Token");
                             showToast("Invalid Token");
                             _progressView.setVisibility(View.GONE);
-                            Intent returnIntent = new Intent();
                             returnIntent.putExtra("errorCode","01");
                             returnIntent.putExtra("errorMessage","SptTokenDataResultInvalidToken");
-                            setResult(Activity.RESULT_OK,returnIntent);
                             finish();
                             break;
                         case SptTokenDataResultServerNotReachable:
                           //  _passwordView.setError("Server Not Reachable");
                             showToast("Server Not Reachable");
                             _progressView.setVisibility(View.GONE);
-                            Intent returnIntent = new Intent();
                             returnIntent.putExtra("errorCode","02");
                             returnIntent.putExtra("errorMessage","SptTokenDataResultServerNotReachable");
-                            setResult(Activity.RESULT_OK,returnIntent);
                             finish();
                             break;
                         case SptTokenDataResultError:
                             showToast("Connection Error");
                             _progressView.setVisibility(View.GONE);
-                            Intent returnIntent = new Intent();
                             returnIntent.putExtra("errorCode","01");
                             returnIntent.putExtra("errorMessage","SptTokenDataResultInvalidToken");
-                            setResult(Activity.RESULT_OK,returnIntent);
                             finish();
                             break;
                     }
