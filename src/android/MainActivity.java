@@ -5,6 +5,7 @@ import org.apache.cordova.*;
 import android.util.Log;
 
 import android.Manifest;
+import android.widget.Toast;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.content.pm.PackageManager;
