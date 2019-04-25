@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     EditText _sessionIdView;
     EditText _userView;
     Button _connectButton;
+    View _progressView;
   //  SptCallID _callID;
     SptIMSDKApp _app;
     AlertDialog _callDialog;
@@ -146,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run()
                 {
-                  //  _progressView.setVisibility(View.GONE);
+                    _progressView.setVisibility(View.GONE);
                     switch (eResult)
                     {
                         case eSptIMConnect_AuthError:
@@ -357,6 +358,8 @@ public class MainActivity extends AppCompatActivity {
        Resources resources = getApplication().getResources();
        setContentView(resources.getIdentifier("activity_main", "layout", package_name));
        setTitle(" ");
+
+       _progressView = findViewById(resources.getIdentifier("activity_login_progress", "id", package_name));
 
        Log.v("package name: ", package_name);
       // Log.v("Resources name: ", resources.String);
