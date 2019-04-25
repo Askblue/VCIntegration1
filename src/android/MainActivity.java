@@ -624,7 +624,7 @@ Log.v("main: ","onCreat3");
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-                toast.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.TOP, 0,10);
+                toast.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.BOTTOM, 0,10);
                 toast.show();
             }
         });
