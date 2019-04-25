@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                     switch (eResult)
                     {
                         case eSptIMConnect_AuthError:
-                  //          showToast("eSptIMConnect_AuthError");
+                            showToast("eSptIMConnect_AuthError");
                             break;
                         case eSptIMConnect_GDPRPending:
                     //        showGdprDialog();
@@ -605,6 +605,24 @@ Log.v("main: ","onCreat3");
             ActivityCompat.requestPermissions(this, permissionsArray.toArray(new String[permissionsArray.size()]),
                     REQUEST_CODE_ASK_PERMISSIONS);
 
+
+    }
+
+    private void showToast(final String message)
+    {
+        runOnUiThread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                CharSequence text = message;
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+                toast.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.TOP, 0,10);
+                toast.show();
+            }
+        });
 
     }
 
