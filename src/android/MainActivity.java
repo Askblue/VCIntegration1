@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;  // alterado
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -197,15 +198,30 @@ public class MainActivity extends AppCompatActivity {
                           //  _tokenView.setError("Invalid Token");
                             showToast("Invalid Token");
                             _progressView.setVisibility(View.GONE);
+                            Intent returnIntent = new Intent();
+                            returnIntent.putExtra("errorCode","01");
+                            returnIntent.putExtra("errorMessage","SptTokenDataResultInvalidToken");
+                            setResult(Activity.RESULT_OK,returnIntent);
+                            finish();
                             break;
                         case SptTokenDataResultServerNotReachable:
                           //  _passwordView.setError("Server Not Reachable");
                             showToast("Server Not Reachable");
                             _progressView.setVisibility(View.GONE);
+                            Intent returnIntent = new Intent();
+                            returnIntent.putExtra("errorCode","02");
+                            returnIntent.putExtra("errorMessage","SptTokenDataResultServerNotReachable");
+                            setResult(Activity.RESULT_OK,returnIntent);
+                            finish();
                             break;
                         case SptTokenDataResultError:
                             showToast("Connection Error");
                             _progressView.setVisibility(View.GONE);
+                            Intent returnIntent = new Intent();
+                            returnIntent.putExtra("errorCode","01");
+                            returnIntent.putExtra("errorMessage","SptTokenDataResultInvalidToken");
+                            setResult(Activity.RESULT_OK,returnIntent);
+                            finish();
                             break;
                     }
 

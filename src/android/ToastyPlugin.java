@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.util.Log;
+import android.app.Activity;
 
 import android.app.Application;
 import android.support.annotation.CallSuper;
@@ -97,7 +98,7 @@ public class ToastyPlugin extends CordovaPlugin {
           // Intent intent = new Intent(context, MainActivity.class);
           //that.cordova.getActivity().startActivity(intentScan);
 
-          that.cordova.startActivityForResult (that, intentScan, 0);
+          that.cordova.startActivityForResult (that, intentScan, 1);
 
         //  that.cordova.getActivity().startActivityForResult(intentScan, 0);
 
@@ -117,7 +118,16 @@ public class ToastyPlugin extends CordovaPlugin {
 
   @Override
   public void onActivityResult(int reqCode, int resCode, Intent intent) {
-      
+
+    if (requestCode == 1) {
+        if(resultCode == Activity.RESULT_OK){
+            String errorCode=data.getStringExtra("errorCode");
+            PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+            callbackContext.sendPluginResult(pluginResult);
+        }
+
+    }
+
   }
 
 
