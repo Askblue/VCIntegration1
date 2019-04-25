@@ -195,14 +195,17 @@ public class MainActivity extends AppCompatActivity {
                                 _sdk.loginWithTokenDataResult(tokenDataRes);
                         case SptTokenDataResultInvalidToken:
                           //  _tokenView.setError("Invalid Token");
-                          //  _progressView.setVisibility(View.GONE);
+                            showToast("Invalid Token");
+                            _progressView.setVisibility(View.GONE);
                             break;
                         case SptTokenDataResultServerNotReachable:
                           //  _passwordView.setError("Server Not Reachable");
-                        //    _progressView.setVisibility(View.GONE);
+                            showToast("Server Not Reachable");
+                            _progressView.setVisibility(View.GONE);
                             break;
                         case SptTokenDataResultError:
-                          //  showToast("SptTokenDataResultError");
+                            showToast("Connection Error");
+                            _progressView.setVisibility(View.GONE);
                             break;
                     }
 
