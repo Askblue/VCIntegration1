@@ -86,6 +86,7 @@
 -(void)onGetTokenDataResult:(SptTokenDataResult *)tokenDataResult{
     NSString *error = nil;
     NSString *statusCode = nil;
+    NSString *errorMessage = @"NoError";
 
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
                                       message:@"87052327"
@@ -105,18 +106,21 @@
             CollaborateUtils.Instance.loginMeetingSeqID = tokenDataResult.meetingSequenceID;
             break;
         case kSptTokenDataResultError:
-            statusCode = @"01";
+            statusCode = @"03";
             error = @"Error retrieving token data";
+            errorMessage = @"SptTokenDataResultError";
             //Any other error in the token patameters
             break;
         case kSptTokenDataResultServerNotReachable:
             error = @"Server not reachable";
             statusCode = @"02";
+            errorMessage = @"SptTokenDataResultServerNotReachable";
             //Cannot reach server, try later?
             break;
         case kSptTokenDataResultInvalidToken:
             error = @"Invalid token";
-            statusCode = @"03";
+            statusCode = @"01";
+            errorMessage = @"SptTokenDataResultInvalidToken";
             //Token is invalid, nothing else
             break;
     }
@@ -129,7 +133,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //[self dismissViewControllerAnimated:NO completion:nil];
             [self dismissViewControllerAnimated:NO completion:^{
-                [self.delegate result:statusCode andMessage:error];
+                [self.delegate result:statusCode andMessage:errorMessage];
             }];
         }]];
         [self presentViewController:alert animated:YES completion:nil];

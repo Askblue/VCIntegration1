@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
                         case SptTokenDataResultError:
                             showToast("Connection Error");
                             _progressView.setVisibility(View.GONE);
-                            returnIntent.putExtra("errorCode","01");
+                            returnIntent.putExtra("errorCode","03");
                             returnIntent.putExtra("errorMessage","SptTokenDataResultInvalidToken");
                             setResult(Activity.RESULT_CANCELED,returnIntent);
                             finish();
