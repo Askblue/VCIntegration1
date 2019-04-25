@@ -105,10 +105,7 @@
 
       _launchScreenViewController.delegate = self;
 
-      CDVPluginResult* result = [CDVPluginResult
-                                 resultWithStatus:CDVCommandStatus_OK
-                                 messageAsString:@"NoError"];
-      [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+      //[self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 
 }
 
@@ -128,6 +125,12 @@
 
       [self.commandDelegate sendPluginResult:result1 callbackId:_localcmd.callbackId];
 
+      UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
+                                        message:@"87052327"
+                                       delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+      //NSLog(@"VC - onGetTokenDataResult");
+      //[alert show];
+
     } else {
         CDVPluginResult* result2 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
@@ -135,6 +138,12 @@
 
         [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
 
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test2"
+                                          message:@"87052327"
+                                         delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        //NSLog(@"VC - onGetTokenDataResult");
+        //[alert show];
+      //  exit(0);
     }
 
 }
