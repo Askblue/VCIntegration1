@@ -112,8 +112,8 @@ public class ToastyPlugin extends CordovaPlugin {
       //Context context = cordova.getActivity().getApplicationContext();
     //  this.openNewActivity(context);
       // Send a positive result to the callbackContext
-      PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-      callbackContext.sendPluginResult(pluginResult);
+    //  PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+    //  callbackContext.sendPluginResult(pluginResult);
     //  pluginResult.setKeepCallback(true);
       return true;
   }
@@ -125,7 +125,7 @@ public class ToastyPlugin extends CordovaPlugin {
         if(resCode == Activity.RESULT_CANCELED){
 
             JSONObject message = new JSONObject();
-            
+
             String errorCode=intent.getStringExtra("errorCode");
             String errorMessage=intent.getStringExtra("errorMessage");
 
