@@ -151,10 +151,8 @@
                                          delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
+        _launchScreenViewController = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        self.window.rootViewController = nil;
-        [self.window resignKeyWindow];
-        [self.window removeFromSuperview];
     
         //exit(0);
     }
