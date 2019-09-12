@@ -139,6 +139,13 @@
       //NSLog(@"VC - onGetTokenDataResult");
       //[alert show];
 
+      [[_launchScreenViewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+      _launchScreenViewController = nil;
+      [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+
+      [self.viewController.view removeFromSuperview];
+
     } else {
         CDVPluginResult* result2 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
@@ -155,6 +162,7 @@
       //  AskblueUtils *instance = [AskblueUtils Instance];
       //  instance = nil;
         [[_launchScreenViewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        _launchScreenViewController = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
 
