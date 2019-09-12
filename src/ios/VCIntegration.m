@@ -153,7 +153,7 @@
         //[alert show];
         _launchScreenViewController = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
+        [self.viewController.view removeFromSuperview];
         //exit(0);
     }
 
