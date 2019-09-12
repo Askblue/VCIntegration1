@@ -152,6 +152,8 @@
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
         _launchScreenViewController = nil;
+        AskblueUtils *instance = [AskblueUtils Instance];
+        instance = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [self.viewController.view removeFromSuperview];
         //exit(0);
