@@ -100,8 +100,16 @@
 
 
       _launchScreenViewController.view.frame = self.viewController.view.frame;
-      [self.viewController.view addSubview:_launchScreenViewController.view];
-      [_launchScreenViewController didMoveToParentViewController:self.viewController];
+    // 1  [self.viewController.view addSubview:_launchScreenViewController.view];
+    // 2 [_launchScreenViewController didMoveToParentViewController:self.viewController];
+
+
+      if (self.viewController.navigationController) {
+          [self.viewController.navigationController pushViewController:_launchScreenViewController animated:YES];
+      } else {
+          UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_launchScreenViewController];
+          self.viewController.view.window.rootViewController = nav;
+      }
 
       _launchScreenViewController.delegate = self;
 
@@ -143,6 +151,7 @@
                                          delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
+        [self.viewController.navigationController popViewControllerAnimated: YES];
       //  exit(0);
     }
 
