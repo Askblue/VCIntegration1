@@ -151,7 +151,7 @@
                                          delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
-        [self.viewController.navigationController popViewControllerAnimated: YES];
+      //  [self.viewController.navigationController popViewControllerAnimated: YES];
       //  exit(0);
     }
 
