@@ -156,9 +156,15 @@
         instance = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [self.viewController.view removeFromSuperview];
+        [super dealloc];
         //exit(0);
     }
 
+}
+
+- (void) dealloc
+{
+    [super dealloc];
 }
 
 
