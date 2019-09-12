@@ -152,7 +152,7 @@
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-      //  [self.viewController.navigationController popViewControllerAnimated: YES];
+        [self.viewController.navigationController popViewControllerAnimated: YES];
       //  exit(0);
     }
 
