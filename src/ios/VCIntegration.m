@@ -152,8 +152,11 @@
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        [self.viewController.navigationController popViewControllerAnimated: YES];
-      //  exit(0);
+        self.window.rootViewController = nil;
+        [self.window resignKeyWindow];
+        [self.window removeFromSuperview];
+    
+        //exit(0);
     }
 
 }
