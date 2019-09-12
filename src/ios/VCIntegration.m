@@ -154,11 +154,12 @@
       //  _launchScreenViewController = nil;
       //  AskblueUtils *instance = [AskblueUtils Instance];
       //  instance = nil;
-        [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [[_launchScreenViewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
 
         [self.viewController.view removeFromSuperview];
-        [_launchScreenViewController.view removeFromSuperview];
+        //[_launchScreenViewController.view removeFromSuperview];
         //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
 
     }
