@@ -144,7 +144,7 @@
                                    resultWithStatus:CDVCommandStatus_OK
                                    messageAsString:message];
 
-        [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
+
 
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test2"
                                           message:@"87052327"
@@ -156,15 +156,10 @@
         instance = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [self.viewController.view removeFromSuperview];
-        [super dealloc];
-        //exit(0);
+        //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
+        [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
     }
 
-}
-
-- (void) dealloc
-{
-    [super dealloc];
 }
 
 
