@@ -151,9 +151,9 @@
                                          delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
-        _launchScreenViewController = nil;
-        AskblueUtils *instance = [AskblueUtils Instance];
-        instance = nil;
+      //  _launchScreenViewController = nil;
+      //  AskblueUtils *instance = [AskblueUtils Instance];
+      //  instance = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [self.viewController.view removeFromSuperview];
         //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
