@@ -139,13 +139,6 @@
       //NSLog(@"VC - onGetTokenDataResult");
       //[alert show];
 
-      [[_launchScreenViewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-      _launchScreenViewController = nil;
-      [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-
-
-      [self.viewController.view removeFromSuperview];
-
     } else {
         CDVPluginResult* result2 = [CDVPluginResult
                                    resultWithStatus:CDVCommandStatus_OK
@@ -164,14 +157,12 @@
         [[_launchScreenViewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         _launchScreenViewController = nil;
         [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-
-
         [self.viewController.view removeFromSuperview];
         //[_launchScreenViewController.view removeFromSuperview];
         //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
 
     }
-
+    [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 
