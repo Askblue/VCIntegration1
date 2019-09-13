@@ -131,6 +131,10 @@
                                  resultWithStatus:CDVCommandStatus_ERROR
                                  messageAsString:message];
 
+       [_launchScreenViewController willMoveToParentViewController:nil];
+       [_launchScreenViewController.view removeFromSuperview];
+       [_launchScreenViewController removeFromParentViewController];
+
       [self.commandDelegate sendPluginResult:result1 callbackId:_localcmd.callbackId];
 
       UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
