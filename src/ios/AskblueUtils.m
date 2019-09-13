@@ -14,8 +14,13 @@
      Here we maintain an static object for this class
      */
     static AskblueUtils *instance = nil;
-    if ( instance == nil )
-        instance = [[AskblueUtils alloc]init];
+
+    @synchronized(self) {
+        if (instance == nil)
+            instance = [[self alloc] init];
+    }
+  //  if ( instance == nil )
+  //      instance = [[AskblueUtils alloc]init];
 
     return instance;
 }
