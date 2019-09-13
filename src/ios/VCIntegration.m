@@ -137,9 +137,9 @@
 
       [self.commandDelegate sendPluginResult:result1 callbackId:_localcmd.callbackId];
 
-      UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
-                                        message:@"87052327"
-                                       delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+     //  UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test1"
+    //                                    message:@"87052327"
+    //                                   delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
       //NSLog(@"VC - onGetTokenDataResult");
       //[alert show];
 
