@@ -131,9 +131,9 @@
                                  resultWithStatus:CDVCommandStatus_ERROR
                                  messageAsString:message];
 
-       [_launchScreenViewController willMoveToParentViewController:nil];
-       [_launchScreenViewController.view removeFromSuperview];
-       [_launchScreenViewController removeFromParentViewController];
+       [self._launchScreenViewController willMoveToParentViewController:nil];
+       [self._launchScreenViewController.view removeFromSuperview];
+       [self._launchScreenViewController removeFromParentViewController];
 
       [self.commandDelegate sendPluginResult:result1 callbackId:_localcmd.callbackId];
 
