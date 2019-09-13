@@ -134,7 +134,7 @@
             //[self dismissViewControllerAnimated:NO completion:nil];
             [self dismissViewControllerAnimated:NO completion:^{
                 CollaborateUtils *instance = [CollaborateUtils Instance];
-                intance = nil;
+                instance = nil;
                 [self.delegate result:statusCode andMessage:errorMessage];
             }];
         }]];
