@@ -133,8 +133,8 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //[self dismissViewControllerAnimated:NO completion:nil];
 
-            CollaborateUtils *instance = [CollaborateUtils Instance];
-            instance = nil;
+          //  CollaborateUtils *instance = [CollaborateUtils Instance];
+          //  instance = nil;
             [self dismissViewControllerAnimated:NO completion:^{
                 [self.delegate result:statusCode andMessage:errorMessage];
             }];
@@ -182,7 +182,7 @@
 
 - (void)viewDismiss {
     [self dismissViewControllerAnimated:NO completion:nil];
-    [self.delegate result:nil andMessage:@""];
+    [self.delegate result:@"" andMessage:@""];
 }
 
 @end
