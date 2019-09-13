@@ -160,7 +160,7 @@
       //  [self.viewController.view removeFromSuperview];
         //[_launchScreenViewController.view removeFromSuperview];
         //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
-
+        exit(0);
     }
 }
 
