@@ -146,9 +146,9 @@
 
         [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
 
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test2"
-                                          message:@"87052327"
-                                         delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+      //  UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test2"
+      //                                    message:@"87052327"
+      //                                   delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
         //NSLog(@"VC - onGetTokenDataResult");
         //[alert show];
       //  _launchScreenViewController = nil;
@@ -160,7 +160,7 @@
       //  [self.viewController.view removeFromSuperview];
         //[_launchScreenViewController.view removeFromSuperview];
         //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
-        exit(0);
+
     }
 }
 
