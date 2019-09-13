@@ -144,6 +144,12 @@
                                    resultWithStatus:CDVCommandStatus_OK
                                    messageAsString:message];
 
+      //  [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+        [_launchScreenViewController willMoveToParentViewController:nil];
+        [_launchScreenViewController.view removeFromSuperview];
+        [_launchScreenViewController removeFromParentViewController];
+
         [self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
 
       //  UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"test2"
@@ -156,7 +162,8 @@
       //  instance = nil;
       //  [[_launchScreenViewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     //    _launchScreenViewController = nil;
-        [[self.viewController.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+
       //  [self.viewController.view removeFromSuperview];
         //[_launchScreenViewController.view removeFromSuperview];
         //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
