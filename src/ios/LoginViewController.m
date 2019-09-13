@@ -133,6 +133,8 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //[self dismissViewControllerAnimated:NO completion:nil];
             [self dismissViewControllerAnimated:NO completion:^{
+                CollaborateUtils *instance = [CollaborateUtils Instance];
+                intance = nil;
                 [self.delegate result:statusCode andMessage:errorMessage];
             }];
         }]];
