@@ -171,7 +171,7 @@
         //exit(0);[self.commandDelegate sendPluginResult:result2 callbackId:_localcmd.callbackId];
 
     }
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.viewController dismissViewControllerAnimated:NO completion:nil];
   //  AskblueUtils *instance = [AskblueUtils Instance];
   //  [instance deleteInstance];
 
