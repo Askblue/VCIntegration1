@@ -168,6 +168,8 @@
 
     }
 
+    AskblueUtils *instance = [AskblueUtils Instance];
+    instance = nil;
     [_launchScreenViewController willMoveToParentViewController:nil];
     [_launchScreenViewController.view removeFromSuperview];
     [_launchScreenViewController removeFromParentViewController];
