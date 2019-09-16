@@ -34,11 +34,9 @@
 }
 
 -(void)deleteInstance{
-    @synchronized(self) {
       if (self.instance != nil) {
           self.instance = nil;
       }
-  }
 }
 
 @end
