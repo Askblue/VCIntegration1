@@ -54,7 +54,7 @@
                                        message:msg1
                                       delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
 
-     [alert show];
+    // [alert show];
 
      _storyboardName = @"Main1";
 
@@ -100,8 +100,8 @@
 
 
       _launchScreenViewController.view.frame = self.viewController.view.frame;
-    //3  [self.viewController.view addSubview:_launchScreenViewController.view];
-    //3  [_launchScreenViewController didMoveToParentViewController:self.viewController];
+      [self.viewController.view addSubview:_launchScreenViewController.view];
+      [_launchScreenViewController didMoveToParentViewController:self.viewController];
 
 
   //    if (self.viewController.navigationController) {
