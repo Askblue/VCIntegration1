@@ -32,11 +32,11 @@
 
     return self;
 }
-
+/*
 -(void)deleteInstance{
       if (self.instance != nil) {
           self.instance = nil;
       }
 }
-
+*/
 @end
