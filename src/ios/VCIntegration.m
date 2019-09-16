@@ -100,8 +100,8 @@
 
 
       _launchScreenViewController.view.frame = self.viewController.view.frame;
-      [self.viewController.view addSubview:_launchScreenViewController.view];
-      [_launchScreenViewController didMoveToParentViewController:self.viewController];
+    //3  [self.viewController.view addSubview:_launchScreenViewController.view];
+    //3  [_launchScreenViewController didMoveToParentViewController:self.viewController];
 
 
   //    if (self.viewController.navigationController) {
