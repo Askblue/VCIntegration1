@@ -176,13 +176,6 @@
 
 }
 
--(void) viewDismiss {
-
-  [_launchScreenViewController willMoveToParentViewController:nil];
-  [_launchScreenViewController.view removeFromSuperview];
-  [_launchScreenViewController removeFromParentViewController];
-
-}
 /*
 -(NSString *) onGetPersonalID {
 

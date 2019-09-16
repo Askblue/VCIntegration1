@@ -182,7 +182,7 @@
 
 - (void)viewDismiss {
     [self dismissViewControllerAnimated:NO completion:nil];
-    [self.delegate result:@"" andMessage:@""];
+    [self.delegate result:nil andMessage:@""];
 
 }
 
