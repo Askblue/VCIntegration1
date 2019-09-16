@@ -120,6 +120,10 @@
 
 - (void)result:(NSString *)code andMessage:(NSString *)message {
 
+    [_launchScreenViewController willMoveToParentViewController:nil];
+    [_launchScreenViewController.view removeFromSuperview];
+    [_launchScreenViewController removeFromParentViewController];
+
     if (code != nil) {
       //  CDVPluginResult* result1 = [CDVPluginResult
       //                             resultWithStatus:CDVCommandStatus_ERROR
@@ -170,9 +174,7 @@
 
   //  AskblueUtils *instance = [AskblueUtils Instance];
   //  [instance deleteInstance];
-    [_launchScreenViewController willMoveToParentViewController:nil];
-    [_launchScreenViewController.view removeFromSuperview];
-    [_launchScreenViewController removeFromParentViewController];
+
 
 }
 
