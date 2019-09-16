@@ -16,6 +16,7 @@
 @interface AskblueUtils : NSObject
 
 +(AskblueUtils*)Instance;
+- (void)deleteInstance;
 
 @property (nonatomic, retain) NSString *myServer;
 @property (nonatomic, retain) NSString *myToken;

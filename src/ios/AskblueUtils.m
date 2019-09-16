@@ -33,4 +33,12 @@
     return self;
 }
 
+-(void)deleteInstance{
+    @synchronized(self) {
+      if (instance != nil) {
+          instance = nil;
+      }
+  }
+}
+
 @end
