@@ -135,11 +135,15 @@
 
           //  CollaborateUtils *instance = [CollaborateUtils Instance];
           //  instance = nil;
-            [self dismissViewControllerAnimated:NO completion:^{
-                [self viewDismiss];
+          //  [self dismissViewControllerAnimated:NO completion:^{
                 [self.delegate result:statusCode andMessage:errorMessage];
             }];
         }]];
+
+        [self presentViewController:alert animated:YES completion:^{
+            [self dismissViewControllerAnimated:NO completion:nil];
+          }];
+        ];
 
     }
 /*
