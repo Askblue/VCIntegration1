@@ -139,9 +139,12 @@
                 [self.delegate result:statusCode andMessage:errorMessage];
             }];
         }]];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self presentViewController:alert animated:YES completion:^{
+            [self viewDismiss];
+        }];
     }
 /*
+
 
     switch ( tokenDataResult.result ){
         case kSptTokenDataResultJoinMeeting:
