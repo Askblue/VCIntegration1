@@ -135,14 +135,17 @@
 
           //  CollaborateUtils *instance = [CollaborateUtils Instance];
           //  instance = nil;
-            [self dismissViewControllerAnimated:NO completion:^{
-                [self.delegate result:statusCode andMessage:errorMessage];
-            }];
+          //1  [self dismissViewControllerAnimated:NO completion:^{
+          //1      [self.delegate result:statusCode andMessage:errorMessage];
+          //1  }];
         }]];
 
-        [self presentViewController:alert animated:YES completion:nil];
+        [self presentViewController:alert animated:YES completion:^{
+            [self dismissViewControllerAnimated:NO completion:^{
+                [self.delegate result:statusCode andMessage:errorMessage];
+            }];  //[self.delegate result:statusCode andMessage:errorMessage];
+        }];];
 
-        [self dismissViewControllerAnimated:NO completion:nil];
     }
 /*
 
