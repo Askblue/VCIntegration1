@@ -142,8 +142,8 @@
 
         [self presentViewController:alert animated:YES completion:^{
             [self dismissViewControllerAnimated:NO completion:nil];
-          }];
-        ];
+        }];
+
 
     }
 /*
