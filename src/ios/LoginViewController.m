@@ -142,7 +142,7 @@
 
         [self presentViewController:alert animated:YES completion:nil];
 
-
+        [self dismissViewControllerAnimated:NO completion:nil];
     }
 /*
 
