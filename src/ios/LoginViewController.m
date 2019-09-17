@@ -125,19 +125,19 @@
             break;
     }
 
-    if ( error != nil ){
+    if ( error != nil ) {
         _activityIndicator.hidden = YES;
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting"
                                                                        message:error
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //[self dismissViewControllerAnimated:NO completion:nil];
+                //[self dismissViewControllerAnimated:NO completion:nil];
 
           //  CollaborateUtils *instance = [CollaborateUtils Instance];
           //  instance = nil;
-          //  [self dismissViewControllerAnimated:NO completion:^{
+            [self dismissViewControllerAnimated:NO completion:^{
                 [self.delegate result:statusCode andMessage:errorMessage];
-          //  }];
+            }];
         }]];
 
         [self presentViewController:alert animated:YES completion:nil];
