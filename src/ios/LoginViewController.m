@@ -140,9 +140,7 @@
             }];
         }]];
 
-        [self presentViewController:alert animated:YES completion:^{
-            [self dismissViewControllerAnimated:NO completion:nil];
-        }];
+        [self presentViewController:alert animated:YES completion:nil];
 
 
     }
