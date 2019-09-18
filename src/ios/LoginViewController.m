@@ -130,7 +130,9 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error connecting"
                                                                        message:error
                                                                 preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil]];
+
+    //    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 //[self dismissViewControllerAnimated:NO completion:nil];
 
           //  CollaborateUtils *instance = [CollaborateUtils Instance];
@@ -138,7 +140,7 @@
           //1  [self dismissViewControllerAnimated:NO completion:^{
           //1      [self.delegate result:statusCode andMessage:errorMessage];
           //1  }];
-        }]];
+      //  }]];
 
         [self presentViewController:alert animated:YES completion:^{
             [self dismissViewControllerAnimated:NO completion:^{
