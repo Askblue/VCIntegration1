@@ -146,7 +146,7 @@
             [self dismissViewControllerAnimated:NO completion:^{
                 [self.delegate result:statusCode andMessage:errorMessage];
             }];  //[self.delegate result:statusCode andMessage:errorMessage];
-        }];];
+        }];
 
     }
 /*
