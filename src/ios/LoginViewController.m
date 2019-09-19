@@ -143,9 +143,9 @@
       //  }]];
 
         [self presentViewController:alert animated:YES completion:^{
-            [self dismissViewControllerAnimated:NO completion:^{
+        //    [self dismissViewControllerAnimated:NO completion:^{
                 [self.delegate result:statusCode andMessage:errorMessage];
-            }];  //[self.delegate result:statusCode andMessage:errorMessage];
+          //  }];  //[self.delegate result:statusCode andMessage:errorMessage];
         }];
 
     }
